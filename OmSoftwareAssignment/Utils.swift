@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 import SystemConfiguration
+import Alamofire
+import SwiftyJSON
+
 
 @IBDesignable
 class CardViewGrad: UIView {
@@ -128,3 +131,139 @@ class CardView: UIView {
         self.layer.mask = mask
     }
 }
+
+
+
+
+class AFWrapper: NSObject {
+    
+    
+    class func requestWith(url: String, imageData: Data?, parameters: [String : Any], onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
+        
+        let headers: HTTPHeaders = [
+           
+            "Authorization": "\(Constant.TOKEN))"
+        ]
+        
+        print("Headers => \(headers)")
+        
+        print("Server Url => \(url)")
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            if let data = imageData{
+                multipartFormData.append(data, withName: "product_video", fileName: "video.mp4", mimeType: "video/mp4")
+            }
+            
+            for (key, value) in parameters {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+                print("PARAMS => \(multipartFormData)")
+            }
+            
+        }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    print("Succesfully uploaded")
+                    if let err = response.error{
+                        onError?(err)
+                        return
+                    }
+                    print(JSON(response.result.value as Any))
+                    onCompletion?(JSON(response.result.value as Any))
+                }
+            case .failure(let error):
+                print("Error in upload: \(error.localizedDescription)")
+                onError?(error)
+            }
+        }
+    }
+    
+    class func requestPOSTURLWithJSONRequest(view : UIViewController, requestMethod : HTTPMethod, _ strURL : String, params : [String : AnyObject]?, headers: [String: String]?, success:@escaping (JSON) -> Void, failure:@escaping (NSError) -> Void){
+        let viewD = view
+        print(JSON(params))
+        print(JSON(headers))
+        //view.showLoader()
+        
+        let requestUrl = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        print("URL ->\(requestUrl ?? "")")
+        
+        let Alamofire = SessionManager.default
+        Alamofire.session.configuration.timeoutIntervalForRequest = 300
+        
+        Alamofire.request(requestUrl!, method: requestMethod, parameters: params, encoding: JSONEncoding.default, headers: headers)
+            .downloadProgress(queue: DispatchQueue.global(qos: .utility)){
+                progress in
+            }
+            .responseJSON {
+                
+                response in
+                if response.result.isSuccess {
+                    
+                   // view.stopLoader()
+                    
+                    let resJson = JSON(response.result.value!)
+                    
+                    print(resJson)
+                    
+//                    if resJson["status"].boolValue  {
+
+                        success(resJson)
+
+//                    }else {
+
+                        //view.showToast(message: "Please try again")
+
+  //                  }
+
+//                    print(resJson)
+//                    success(resJson)
+                    
+                }
+                if response.result.isFailure {
+                    
+                   // view.stopLoader()
+                    
+                    print(response.result.error)
+                    
+                    if let httpStatusCode = response.response?.statusCode {
+                        switch(httpStatusCode) {
+                        case 404:
+                            
+                            break
+                        case -1005:
+                            
+                            let error : NSError = response.result.error! as NSError
+                            failure(error)
+                            
+                            break
+                        default:
+                            let error : NSError = response.result.error! as NSError
+                           
+                            let app = UIApplication.shared.delegate as! AppDelegate
+                            
+//                            if app.isCart{
+//
+//                                app.isCart = false
+//                                app.invalidCard = true
+//                                failure(error)
+//
+//                            }
+                            
+                          
+                            
+                           
+                            
+                            break;
+                        }
+                    } else {
+                        
+                        let error : NSError = response.result.error! as NSError
+                        failure(error)
+                        
+                    }
+                }
+        }
+    }
+}
+

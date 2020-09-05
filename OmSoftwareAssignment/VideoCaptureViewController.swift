@@ -45,6 +45,16 @@ class VideoCaptureViewController: UIViewController, UINavigationControllerDelega
             else {
                 return
         }
+        
+        let data = try! Data(contentsOf: url.standardizedFileURL)
+        
+        if Reachability.isInternetAvailable(){
+            AFWrapper.requestWith(url: Constant.UPLOAD_VIDEO, imageData: data, parameters: ["product_video": "video.mp4"])
+        }else{
+            self.view.makeToast("Internet Not Available")
+        }
+        
+        
 
         // Handle a movie capture
         UISaveVideoAtPathToSavedPhotosAlbum(

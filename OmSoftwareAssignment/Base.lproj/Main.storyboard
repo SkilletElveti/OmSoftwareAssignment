@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Video List View Controller-->
+        <!--Product List-->
         <scene sceneID="NoK-6F-8No">
             <objects>
                 <viewController storyboardIdentifier="VideoListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M8k-UY-nGo" customClass="VideoListViewController" customModule="OmSoftwareAssignment" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,21 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQn-IP-u8e" customClass="CardView" customModule="OmSoftwareAssignment" customModuleProvider="target">
                                 <rect key="frame" x="10" y="88" width="394" height="764"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6D-YD-2Jm">
-                                        <rect key="frame" x="10" y="5" width="374" height="19.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Product List">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.93725490196078431" green="0.33725490196078434" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="311" estimatedRowHeight="311" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-hD-dVL">
-                                        <rect key="frame" x="0.0" y="24.5" width="394" height="739.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="764"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -138,13 +125,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="E6D-YD-2Jm" firstAttribute="leading" secondItem="iQn-IP-u8e" secondAttribute="leading" constant="10" id="2Vo-VM-kZ7"/>
-                                    <constraint firstItem="E6D-YD-2Jm" firstAttribute="top" secondItem="iQn-IP-u8e" secondAttribute="top" constant="5" id="2pw-oQ-fDc"/>
                                     <constraint firstItem="4lU-hD-dVL" firstAttribute="leading" secondItem="iQn-IP-u8e" secondAttribute="leading" id="Mdl-JO-nTF"/>
+                                    <constraint firstItem="4lU-hD-dVL" firstAttribute="top" secondItem="iQn-IP-u8e" secondAttribute="top" id="Z8u-Lv-M2M"/>
                                     <constraint firstAttribute="trailing" secondItem="4lU-hD-dVL" secondAttribute="trailing" id="bEU-pd-n7Z"/>
                                     <constraint firstAttribute="bottom" secondItem="4lU-hD-dVL" secondAttribute="bottom" id="kpn-4T-ekd"/>
-                                    <constraint firstAttribute="trailing" secondItem="E6D-YD-2Jm" secondAttribute="trailing" constant="10" id="qQr-Jd-8Gz"/>
-                                    <constraint firstItem="4lU-hD-dVL" firstAttribute="top" secondItem="E6D-YD-2Jm" secondAttribute="bottom" id="tm9-kG-gyO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -179,7 +163,7 @@
                             <constraint firstItem="ehc-oa-3fC" firstAttribute="centerX" secondItem="WQb-vE-tSt" secondAttribute="centerX" id="y2Q-LX-tXC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EGd-co-U2t"/>
+                    <navigationItem key="navigationItem" title="Product List" id="EGd-co-U2t"/>
                     <connections>
                         <outlet property="parT" destination="4lU-hD-dVL" id="GZf-aX-FsU"/>
                     </connections>
@@ -201,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6Q-cz-NNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6934.7826086956529" y="1273.6607142857142"/>
+            <point key="canvasLocation" x="6974" y="1274"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B9E-kf-gOm">
