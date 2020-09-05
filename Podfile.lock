@@ -1,5 +1,15 @@
 PODS:
   - Alamofire (4.9.1)
+  - BMPlayer (1.3.2):
+    - BMPlayer/Full (= 1.3.2)
+  - BMPlayer/Core (1.3.2)
+  - BMPlayer/Full (1.3.2):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 4.7.0)
+    - SnapKit (~> 5.0.0)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
   - SDWebImage (5.8.4):
     - SDWebImage/Core (= 5.8.4)
   - SDWebImage/Core (5.8.4)
@@ -10,6 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.9)
+  - BMPlayer (~> 1.3.0)
   - SDWebImage
   - SkeletonView
   - SnapKit
@@ -19,6 +30,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BMPlayer
+    - NVActivityIndicatorView
     - SDWebImage
     - SkeletonView
     - SnapKit
@@ -27,12 +40,14 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  BMPlayer: e4b241bd088644d7b89d991a1a65d1b1615d19b3
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 63003fade20f9183c9821e6275f7a523900908e3
+PODFILE CHECKSUM: 94ca20fcfda9643ab579898a022513388ded8bda
 
 COCOAPODS: 1.9.1

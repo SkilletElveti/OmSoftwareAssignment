@@ -105,6 +105,10 @@ class VideoListViewController: UIViewController {
     }
     
 
+    @IBAction func recordVideo(){
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoCaptureViewController") as! VideoCaptureViewController
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
 }
 
 extension VideoListViewController: UITableViewDelegate, UITableViewDataSource{

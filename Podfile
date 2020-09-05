@@ -13,6 +13,7 @@ target 'OmSoftwareAssignment' do
   pod 'Toast-Swift'
   pod "SkeletonView"
   pod 'SDWebImage'
+  pod 'BMPlayer', '~> 1.3.0'
   
 target 'OmSoftwareAssignmentTests' do
     inherit! :search_paths

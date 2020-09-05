@@ -16,6 +16,7 @@
 		5A52CCA325038444006D8148 /* OmSoftwareAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CCA225038444006D8148 /* OmSoftwareAssignmentTests.swift */; };
 		5A52CCAE25038444006D8148 /* OmSoftwareAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CCAD25038444006D8148 /* OmSoftwareAssignmentUITests.swift */; };
 		5A52CCBC25038AB1006D8148 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CCBB25038AB1006D8148 /* Utils.swift */; };
+		5A52CCBE2503B60A006D8148 /* VideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CCBD2503B60A006D8148 /* VideoCaptureViewController.swift */; };
 		5A7744E925038E5400F73793 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7744E825038E5400F73793 /* Constant.swift */; };
 		5A7744EC2503994D00F73793 /* ListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7744EB2503994D00F73793 /* ListDataModel.swift */; };
 		CB6537B71B4291331D885D50 /* Pods_OmSoftwareAssignment_OmSoftwareAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8613068BA79A10697123E1D2 /* Pods_OmSoftwareAssignment_OmSoftwareAssignmentUITests.framework */; };
@@ -60,6 +61,7 @@
 		5A52CCAD25038444006D8148 /* OmSoftwareAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmSoftwareAssignmentUITests.swift; sourceTree = "<group>"; };
 		5A52CCAF25038444006D8148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A52CCBB25038AB1006D8148 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5A52CCBD2503B60A006D8148 /* VideoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureViewController.swift; sourceTree = "<group>"; };
 		5A7744E825038E5400F73793 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5A7744EB2503994D00F73793 /* ListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataModel.swift; sourceTree = "<group>"; };
 		65209FFDD0869740808EBC5F /* Pods-OmSoftwareAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmSoftwareAssignment.release.xcconfig"; path = "Target Support Files/Pods-OmSoftwareAssignment/Pods-OmSoftwareAssignment.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				5A52CC9925038443006D8148 /* Info.plist */,
 				5A52CCBB25038AB1006D8148 /* Utils.swift */,
 				5A7744E825038E5400F73793 /* Constant.swift */,
+				5A52CCBD2503B60A006D8148 /* VideoCaptureViewController.swift */,
 			);
 			path = OmSoftwareAssignment;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			files = (
 				5A52CC9025038442006D8148 /* ViewController.swift in Sources */,
 				5A52CC8C25038442006D8148 /* AppDelegate.swift in Sources */,
+				5A52CCBE2503B60A006D8148 /* VideoCaptureViewController.swift in Sources */,
 				5A52CCBC25038AB1006D8148 /* Utils.swift in Sources */,
 				5A7744EC2503994D00F73793 /* ListDataModel.swift in Sources */,
 				5A7744E925038E5400F73793 /* Constant.swift in Sources */,
