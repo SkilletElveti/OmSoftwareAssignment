@@ -2,7 +2,7 @@ import UIKit
 import AVKit
 import SwiftyJSON
 import SnapKit
-import SkeletonView
+
 
 protocol Appear {
     func open()
