@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1AFECD065F46F4835185D012 /* Pods_OmSoftwareAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DBB1DBCA11833A4F8EFD02 /* Pods_OmSoftwareAssignmentTests.framework */; };
 		5A52CC8C25038442006D8148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CC8B25038442006D8148 /* AppDelegate.swift */; };
-		5A52CC9025038442006D8148 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CC8F25038442006D8148 /* ViewController.swift */; };
 		5A52CC9325038442006D8148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A52CC9125038442006D8148 /* Main.storyboard */; };
 		5A52CC9525038443006D8148 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A52CC9425038443006D8148 /* Assets.xcassets */; };
 		5A52CC9825038443006D8148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A52CC9625038443006D8148 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,7 @@
 		5A52CCAE25038444006D8148 /* OmSoftwareAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CCAD25038444006D8148 /* OmSoftwareAssignmentUITests.swift */; };
 		5A52CCBC25038AB1006D8148 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CCBB25038AB1006D8148 /* Utils.swift */; };
 		5A52CCBE2503B60A006D8148 /* VideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CCBD2503B60A006D8148 /* VideoCaptureViewController.swift */; };
+		5A52CCC02503CB00006D8148 /* ScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52CCBF2503CAFF006D8148 /* ScrollableViewController.swift */; };
 		5A7744E925038E5400F73793 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7744E825038E5400F73793 /* Constant.swift */; };
 		5A7744EC2503994D00F73793 /* ListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7744EB2503994D00F73793 /* ListDataModel.swift */; };
 		CB6537B71B4291331D885D50 /* Pods_OmSoftwareAssignment_OmSoftwareAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8613068BA79A10697123E1D2 /* Pods_OmSoftwareAssignment_OmSoftwareAssignmentUITests.framework */; };
@@ -49,7 +49,6 @@
 		56167BFC1BF0102CC8BF1536 /* Pods-OmSoftwareAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmSoftwareAssignment.debug.xcconfig"; path = "Target Support Files/Pods-OmSoftwareAssignment/Pods-OmSoftwareAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		5A52CC8825038442006D8148 /* OmSoftwareAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmSoftwareAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A52CC8B25038442006D8148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A52CC8F25038442006D8148 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A52CC9225038442006D8148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A52CC9425038443006D8148 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A52CC9725038443006D8148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		5A52CCAF25038444006D8148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A52CCBB25038AB1006D8148 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5A52CCBD2503B60A006D8148 /* VideoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureViewController.swift; sourceTree = "<group>"; };
+		5A52CCBF2503CAFF006D8148 /* ScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableViewController.swift; sourceTree = "<group>"; };
 		5A7744E825038E5400F73793 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5A7744EB2503994D00F73793 /* ListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataModel.swift; sourceTree = "<group>"; };
 		65209FFDD0869740808EBC5F /* Pods-OmSoftwareAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmSoftwareAssignment.release.xcconfig"; path = "Target Support Files/Pods-OmSoftwareAssignment/Pods-OmSoftwareAssignment.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 			children = (
 				5A7744EA2503993A00F73793 /* Data Model */,
 				5A52CC8B25038442006D8148 /* AppDelegate.swift */,
-				5A52CC8F25038442006D8148 /* ViewController.swift */,
 				5A52CC9125038442006D8148 /* Main.storyboard */,
 				5A52CC9425038443006D8148 /* Assets.xcassets */,
 				5A52CC9625038443006D8148 /* LaunchScreen.storyboard */,
@@ -132,6 +131,7 @@
 				5A52CCBB25038AB1006D8148 /* Utils.swift */,
 				5A7744E825038E5400F73793 /* Constant.swift */,
 				5A52CCBD2503B60A006D8148 /* VideoCaptureViewController.swift */,
+				5A52CCBF2503CAFF006D8148 /* ScrollableViewController.swift */,
 			);
 			path = OmSoftwareAssignment;
 			sourceTree = "<group>";
@@ -423,11 +423,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A52CC9025038442006D8148 /* ViewController.swift in Sources */,
 				5A52CC8C25038442006D8148 /* AppDelegate.swift in Sources */,
 				5A52CCBE2503B60A006D8148 /* VideoCaptureViewController.swift in Sources */,
 				5A52CCBC25038AB1006D8148 /* Utils.swift in Sources */,
 				5A7744EC2503994D00F73793 /* ListDataModel.swift in Sources */,
+				5A52CCC02503CB00006D8148 /* ScrollableViewController.swift in Sources */,
 				5A7744E925038E5400F73793 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

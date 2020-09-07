@@ -7,24 +7,20 @@
 
 import UIKit
 import MobileCoreServices
-
-class VideoCaptureViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate   {
+import Toast_Swift
+class VideoCaptureViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  , Appear {
 
     var controller = UIImagePickerController()
-    let videoFileName = "/video.mp4"
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
+    let app = UIApplication.shared.delegate as! AppDelegate
+    func open() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
                    
                // 2 Present UIImagePickerController to take video
-               controller.sourceType = .camera
-               controller.mediaTypes = [kUTTypeMovie as String]
+            controller.sourceType = .camera
+            controller.videoQuality = .typeHigh
+            controller.mediaTypes = [kUTTypeMovie as String]
             controller.videoMaximumDuration = 40
-               controller.delegate = self
+            controller.delegate = self
                    
                present(controller, animated: true, completion: nil)
            }
@@ -33,10 +29,23 @@ class VideoCaptureViewController: UIViewController, UINavigationControllerDelega
            }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = .black
+        open()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+       
+    }
+    
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        dismiss(animated: true, completion: nil)
-
+//
+        self.controller.dismiss(animated: true, completion: nil)
+        
         guard
             let mediaType = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.mediaType.rawValue)] as? String,
             mediaType == (kUTTypeMovie as String),
@@ -49,7 +58,17 @@ class VideoCaptureViewController: UIViewController, UINavigationControllerDelega
         let data = try! Data(contentsOf: url.standardizedFileURL)
         
         if Reachability.isInternetAvailable(){
-            AFWrapper.requestWith(url: Constant.UPLOAD_VIDEO, imageData: data, parameters: ["product_video": "video.mp4"])
+            self.app.VC = self
+            self.app.showLoader()
+           
+            self.view.makeToast("Uploading Video...")
+            AFWrapper.requestWith(url: Constant.UPLOAD_VIDEO, imageData: data, parameters: ["product_video": "video.mp4"], onCompletion: {_ in
+                self.app.removeLoader()
+                let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ScrollableViewController") as! ScrollableViewController
+                VC.appearDelegate = self
+                self.navigationController?.pushViewController(VC, animated: false)
+                
+            })
         }else{
             self.view.makeToast("Internet Not Available")
         }
@@ -57,11 +76,11 @@ class VideoCaptureViewController: UIViewController, UINavigationControllerDelega
         
 
         // Handle a movie capture
-        UISaveVideoAtPathToSavedPhotosAlbum(
-            url.path,
-            self,
-            #selector(video(_:didFinishSavingWithError:contextInfo:)),
-            nil)
+//        UISaveVideoAtPathToSavedPhotosAlbum(
+//            url.path,
+//            self,
+//            #selector(video(_:didFinishSavingWithError:contextInfo:)),
+//            nil)
     }
 
     @objc func video(_ videoPath: String, didFinishSavingWithError error: Error?, contextInfo info: AnyObject) {
